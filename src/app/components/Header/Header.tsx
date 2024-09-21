@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './Header.module.scss';
-import logo from '../../assets/logo.svg';
+import logo from '../../../assets/logo.svg';
 
 const formattedDate = new Date().toLocaleDateString('pt-BR', {
   weekday: 'long',

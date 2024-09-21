@@ -1,0 +1,21 @@
+#header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.3em;
+
+  .divider {
+    height: 1px;
+    background-color: #d7dde9;
+    margin: 1.3em 0;
+  }
+
+  .date {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+  }
+
+  .greeting {
+    font-weight: 500;
+  }
+}

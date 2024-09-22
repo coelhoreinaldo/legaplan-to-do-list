@@ -3,6 +3,14 @@
 .main {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 24px;
 
@@ -59,4 +67,6 @@
       }
     }
   }
+
+  // Gradient de  #0796D3 para #53C0F0 para #0796D3
 }

@@ -13,26 +13,31 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
     []
   );
   const [tasks, setTasks] = useState<TaskItem[]>(storagedTasks);
-  console.log(tasks);
 
   const addTask = (task: TaskItem) => {
-    console.log('oi');
-    setTasks((prevTasks) => [...prevTasks, task]);
+    const updatedTasks = [...tasks, task];
+    setStoragedTasks(updatedTasks);
+    setTasks(updatedTasks);
   };
 
   const updateTask = (id: number, updatedTask: TaskItem) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) => (task.id === id ? updatedTask : task))
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? updatedTask : task
     );
+    setStoragedTasks(updatedTasks);
+    setTasks(updatedTasks);
   };
 
   const deleteTask = (id: number) => {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    setStoragedTasks(updatedTasks);
+    setTasks(updatedTasks);
   };
 
   useEffect(() => {
-    setStoragedTasks(tasks);
-  }, [tasks]);
+    if (storagedTasks.length !== tasks.length && storagedTasks.length !== 0)
+      setTasks(storagedTasks);
+  }, [storagedTasks]);
 
   return (
     <TaskContext.Provider value={{ tasks, addTask, updateTask, deleteTask }}>

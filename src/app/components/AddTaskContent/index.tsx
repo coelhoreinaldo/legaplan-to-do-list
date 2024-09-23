@@ -5,7 +5,7 @@ import styles from '../../../styles/shared.module.scss';
 import { useTasks } from '@/app/context/TaskContext';
 import { getNextId } from '@/app/utils/getNextId';
 
-function AddTaskContent() {
+export default function AddTaskContent() {
   const router = useRouter();
   const [task, setTask] = useState('');
   const { tasks, addTask } = useTasks();
@@ -33,5 +33,3 @@ function AddTaskContent() {
     </div>
   );
 }
-
-export default AddTaskContent;

@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import styles from './Modal.module.scss';
 
-export function Modal({
+export default function Modal({
   children,
   title,
   description,

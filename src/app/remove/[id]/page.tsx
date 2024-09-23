@@ -1,6 +1,6 @@
 'use client';
 
-import RemoveTaskContent from '../../components/RemoveTaskContent';
+import { RemoveTaskContent } from '@/app/components';
 
 export default function remove() {
   return <RemoveTaskContent />;

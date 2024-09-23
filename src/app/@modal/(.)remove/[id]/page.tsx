@@ -1,7 +1,6 @@
 'use client';
 
-import { Modal } from '@/app/components/Modal';
-import RemoveTaskContent from '@/app/components/RemoveTaskContent';
+import { Modal, RemoveTaskContent } from '@/app/components';
 
 export default function InterceptedRemoveModal() {
   return (

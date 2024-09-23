@@ -1,7 +1,6 @@
 'use client';
 
-import AddTaskContent from '@/app/components/AddTaskContent';
-import { Modal } from '@/app/components/Modal';
+import { AddTaskContent, Modal } from '@/app/components';
 
 export default function InterceptedModal() {
   return (

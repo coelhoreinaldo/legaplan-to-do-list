@@ -1,5 +1,17 @@
+import AddTaskContent from './AddTaskContent';
 import Header from './Header';
-import Tasks from './Tasks';
+import Modal from './Modal';
+import NewTask from './NewTask';
+import RemoveTaskContent from './RemoveTaskContent';
 import Task from './Task';
+import Tasks from './Tasks';
 
-export { Header, Tasks, Task };
+export {
+  AddTaskContent,
+  Header,
+  Tasks,
+  Task,
+  Modal,
+  NewTask,
+  RemoveTaskContent,
+};

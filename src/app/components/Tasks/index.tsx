@@ -2,9 +2,8 @@
 // TODO: Estilizar o checkbox
 import React from 'react';
 import styles from './Tasks.module.scss';
-import { Task } from '..';
+import { NewTask, Task } from '..';
 import { useTasks } from '@/app/context/TaskContext';
-import NewTask from '../NewTask';
 
 function Tasks() {
   const { tasks, updateTask } = useTasks();

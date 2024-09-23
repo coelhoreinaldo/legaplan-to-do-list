@@ -1,5 +1,6 @@
 'use client';
-import AddTaskContent from '../components/AddTaskContent';
+
+import { AddTaskContent } from '../components';
 
 export default function create() {
   return <AddTaskContent />;

@@ -29,7 +29,12 @@ const Task: React.FC<TaskProps> = ({
         {text}
       </label>
       <Link href={`/remove/${id}`}>
-        <Image src={Trash} alt="Lixeira" width={24} height={24} />
+        <Image
+          src={Trash}
+          alt="Lixeira"
+          style={{ minWidth: 24, minHeight: 24, cursor: 'pointer' }}
+          className={styles.trash}
+        />
       </Link>
     </div>
   );

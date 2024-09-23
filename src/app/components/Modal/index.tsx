@@ -17,7 +17,7 @@ export function Modal({
   return (
     <div className={styles.container}>
       <h3 id={styles.title}>{title}</h3>
-      <p>{description}</p>
+      <p id={styles.description}>{description}</p>
       <div>{children}</div>
       {
         <button

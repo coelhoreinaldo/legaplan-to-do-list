@@ -10,6 +10,16 @@
   text-decoration: none;
 }
 
+.removeButton {
+  background: linear-gradient(90deg, #d30707 0%, #f05353 100%);
+  padding: 16px 24px;
+  color: white;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+
 #taskInput {
   width: 100%;
   padding: 16px;

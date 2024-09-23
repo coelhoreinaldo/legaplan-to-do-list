@@ -3,17 +3,16 @@ import styles from '../Tasks/Tasks.module.scss';
 import Trash from '../../../assets/trash.svg';
 import Image from 'next/image';
 import { TaskItem } from '@/app/types';
+import Link from 'next/link';
 
 interface TaskProps {
   taskItem: TaskItem;
   onToggle: (id: number) => void;
-  onDelete: (id: number) => void;
 }
 
 const Task: React.FC<TaskProps> = ({
   taskItem: { id, text, completed },
   onToggle,
-  onDelete,
 }) => {
   return (
     <div className={styles.task} key={id}>
@@ -29,9 +28,9 @@ const Task: React.FC<TaskProps> = ({
       >
         {text}
       </label>
-      <button className={styles.trash} onClick={() => onDelete(id)}>
+      <Link href={`/remove/${id}`}>
         <Image src={Trash} alt="Lixeira" width={24} height={24} />
-      </button>
+      </Link>
     </div>
   );
 };

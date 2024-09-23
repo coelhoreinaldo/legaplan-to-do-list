@@ -1,0 +1,40 @@
+@import '../../variables.module.scss';
+
+.task {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px dashed $light-grayish-blue;
+  border-radius: 8px;
+  gap: 16px;
+  padding: 16px;
+  cursor: pointer;
+
+  .completed {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  input {
+    min-width: 24px;
+    min-height: 24px;
+  }
+  label {
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+  }
+
+  span {
+    margin: 0 auto;
+  }
+
+  a:hover {
+    filter: invert(0.5) sepia(1) saturate(3) hue-rotate(175deg);
+  }
+}
+
+.task:hover {
+  background-color: #f7f9fd;
+}

@@ -91,3 +91,9 @@ button {
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
 }
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 1em 4em;
+  }
+}

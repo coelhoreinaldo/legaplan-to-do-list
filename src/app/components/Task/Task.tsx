@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../Tasks/Tasks.module.scss';
+import styles from './Task.module.scss';
 import Trash from '../../../assets/trash.svg';
 import Image from 'next/image';
 import { TaskItem } from '@/app/types';
@@ -16,17 +16,14 @@ const Task: React.FC<TaskProps> = ({
 }) => {
   return (
     <div className={styles.task} key={id}>
-      <input
-        type="checkbox"
-        id={`task-${id}`}
-        checked={completed}
-        onChange={() => onToggle(id)}
-      />
-      <label
-        htmlFor={`task-${id}`}
-        className={completed ? styles.completed : ''}
-      >
-        {text}
+      <label key={id} htmlFor={`task-${id}`}>
+        <input
+          type="checkbox"
+          id={`task-${id}`}
+          checked={completed}
+          onChange={() => onToggle(id)}
+        />
+        <span className={completed ? styles.completed : ''}>{text}</span>
       </label>
       <Link href={`/remove/${id}`}>
         <Image

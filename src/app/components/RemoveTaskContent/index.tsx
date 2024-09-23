@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import { useRouter } from 'next/navigation';
 import { useTasks } from '@/app/context/TaskContext';
 import styles from '../../../styles/shared.module.scss';
@@ -13,7 +13,7 @@ function RemoveTaskContent() {
   const { deleteTask } = useTasks();
 
   return (
-    <>
+    <section className={styles.buttons}>
       <button
         className={styles.removeButton}
         onClick={(e) => {
@@ -22,10 +22,10 @@ function RemoveTaskContent() {
           router.back();
         }}
       >
-        Remover
+        Deletar
       </button>
       <CancelButton />
-    </>
+    </section>
   );
 }
 

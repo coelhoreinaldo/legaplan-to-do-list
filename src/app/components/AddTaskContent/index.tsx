@@ -21,17 +21,19 @@ export default function AddTaskContent() {
         value={task}
         onChange={(e) => setTask(e.target.value)}
       />
-      <button
-        className={styles.addButton}
-        onClick={(e) => {
-          e.preventDefault();
-          addTask({ id: getNextId(tasks), text: task, completed: false });
-          router.back();
-        }}
-      >
-        Adicionar
-      </button>
-      <CancelButton />
+      <section className={styles.buttons}>
+        <button
+          className={styles.addButton}
+          onClick={(e) => {
+            e.preventDefault();
+            addTask({ id: getNextId(tasks), text: task, completed: false });
+            router.back();
+          }}
+        >
+          Adicionar
+        </button>
+        <CancelButton />
+      </section>
     </div>
   );
 }

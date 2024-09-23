@@ -1,5 +1,5 @@
 'use client';
-// TODO: Estilizar o checkbox
+
 import React from 'react';
 import styles from './Tasks.module.scss';
 import { NewTask, Task } from '..';

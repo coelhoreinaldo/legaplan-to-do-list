@@ -19,6 +19,7 @@ const Task: React.FC<TaskProps> = ({
       <label key={id} htmlFor={`task-${id}`}>
         <input
           type="checkbox"
+          data-testid={`task-${id}`}
           id={`task-${id}`}
           checked={completed}
           onChange={() => onToggle(id)}

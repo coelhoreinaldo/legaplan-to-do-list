@@ -1,0 +1,128 @@
+.
+├── README.md
+├── __tests__
+│   └── app.test.tsx
+├── coverage
+│   ├── clover.xml
+│   ├── coverage-final.json
+│   ├── lcov-report
+│   │   ├── app
+│   │   │   ├── components
+│   │   │   │   ├── AddTaskContent
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── index.tsx.html
+│   │   │   │   ├── CancelButton
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── index.tsx.html
+│   │   │   │   ├── Header
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── index.tsx.html
+│   │   │   │   ├── Modal
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── index.tsx.html
+│   │   │   │   ├── NewTask
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── index.tsx.html
+│   │   │   │   ├── RemoveTaskContent
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── index.tsx.html
+│   │   │   │   ├── Task
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── index.tsx.html
+│   │   │   │   ├── Tasks
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── index.tsx.html
+│   │   │   │   ├── index.html
+│   │   │   │   └── index.tsx.html
+│   │   │   ├── context
+│   │   │   │   ├── TaskContext.tsx.html
+│   │   │   │   └── index.html
+│   │   │   ├── hooks
+│   │   │   │   ├── index.html
+│   │   │   │   └── useLocalStorage.ts.html
+│   │   │   ├── index.html
+│   │   │   ├── page.tsx.html
+│   │   │   └── utils
+│   │   │       ├── getNextId.ts.html
+│   │   │       └── index.html
+│   │   ├── base.css
+│   │   ├── block-navigation.js
+│   │   ├── favicon.png
+│   │   ├── index.html
+│   │   ├── prettify.css
+│   │   ├── prettify.js
+│   │   ├── sort-arrow-sprite.png
+│   │   └── sorter.js
+│   └── lcov.info
+├── folder_structure.txt
+├── jest.config.ts
+├── jest.setup.ts
+├── mocks
+│   ├── render.tsx
+│   └── tasks.ts
+├── next-env.d.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app
+│   │   ├── @modal
+│   │   │   ├── (.)create
+│   │   │   │   └── page.tsx
+│   │   │   ├── (.)remove
+│   │   │   │   └── [id]
+│   │   │   │       └── page.tsx
+│   │   │   └── default.ts
+│   │   ├── components
+│   │   │   ├── AddTaskContent
+│   │   │   │   └── index.tsx
+│   │   │   ├── CancelButton
+│   │   │   │   ├── CancelButton.module.scss
+│   │   │   │   └── index.tsx
+│   │   │   ├── Header
+│   │   │   │   ├── Header.module.scss
+│   │   │   │   └── index.tsx
+│   │   │   ├── Modal
+│   │   │   │   ├── Modal.module.scss
+│   │   │   │   └── index.tsx
+│   │   │   ├── NewTask
+│   │   │   │   └── index.tsx
+│   │   │   ├── RemoveTaskContent
+│   │   │   │   └── index.tsx
+│   │   │   ├── Task
+│   │   │   │   ├── Task.module.scss
+│   │   │   │   └── index.tsx
+│   │   │   ├── Tasks
+│   │   │   │   ├── Tasks.module.scss
+│   │   │   │   └── index.tsx
+│   │   │   └── index.tsx
+│   │   ├── context
+│   │   │   └── TaskContext.tsx
+│   │   ├── create
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── globals.scss
+│   │   ├── hooks
+│   │   │   └── useLocalStorage.ts
+│   │   ├── layout.tsx
+│   │   ├── page.module.scss
+│   │   ├── page.tsx
+│   │   ├── remove
+│   │   │   └── [id]
+│   │   │       └── page.tsx
+│   │   ├── types.ts
+│   │   ├── utils
+│   │   │   └── getNextId.ts
+│   │   └── variables.module.scss
+│   ├── assets
+│   │   ├── logo.svg
+│   │   └── trash.svg
+│   └── styles
+│       └── shared.module.scss
+├── tests
+│   ├── __tests__
+│   └── tests
+│       └── mocks
+└── tsconfig.json
+
+44 directories, 81 files

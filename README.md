@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Legaplan To-Do List App
 
-## Getting Started
+![App](./demo.png)
+  
+Esta é uma aplicação de lista de tarefas (To-Do List) desenvolvida em **Next.js 14** e estilizada com **SCSS** como parte de um processo seletivo para a empresa **Legaplan**. A aplicação segue a metodologia **Mobile First** para garantir uma ótima experiência de uso em dispositivos móveis e desktops.
 
-First, run the development server:
+## 🚀 Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Visualização de tarefas**: Veja todas as tarefas listadas.
+- **Adicionar tarefa**: Crie novas tarefas rapidamente.
+- **Marcar como finalizadas ou não**: Alterne entre tarefas concluídas e pendentes.
+- **Remover tarefas**: Exclua tarefas que não são mais necessárias.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: Framework React para criação de aplicações web.
+- **SCSS**: Utilizado para estilizar a aplicação.
+- **Jest**: Framework de testes para garantir a confiabilidade da aplicação.
+- **React Testing Library**: Utilizado para testar componentes React de forma simples e eficaz.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📱 Metodologia Mobile First
 
-## Learn More
+A aplicação foi desenvolvida utilizando a metodologia **Mobile First**, o que significa que a interface foi inicialmente criada para dispositivos móveis e depois adaptada para telas maiores, como tablets e desktops. Isso garante uma boa experiência de usuário, independentemente do dispositivo utilizado.
 
-To learn more about Next.js, take a look at the following resources:
+## 🧪 Testes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- A aplicação foi testada usando **Jest** e **React Testing Library** para garantir que as funcionalidades estão funcionando corretamente.
+- Para rodar os testes, utilize o comando:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  ```bash
+  npm run test
+  ```
 
-## Deploy on Vercel
+## 🖼️ Demonstração
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Ao acessar a página principal, você pode visualizar todas as tarefas, adicionar novas, marcar como concluídas ou excluí-las.
+- Clique no botão "Adicionar nova tarefa" para criar uma nova tarefa.
+- Marque a caixa de seleção para concluir uma tarefa.
+- Utilize o botão de lixeira para excluir uma tarefa.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Instalação e Execução
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/legaplan-todolist.git
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+3. Execute a aplicação:
+
+    ```bash
+    npm run dev
+    ```
+
+4. Acesse a aplicação em seu navegador:
+
+    ```bash
+    http://localhost:3000
+    ```

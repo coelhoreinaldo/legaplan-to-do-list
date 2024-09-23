@@ -34,6 +34,16 @@
   margin-bottom: 24px;
 }
 
+#title {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+#description {
+  color: #0000008a;
+}
+
 @media screen and (min-width: 768px) {
   .buttons {
     flex-direction: row-reverse;

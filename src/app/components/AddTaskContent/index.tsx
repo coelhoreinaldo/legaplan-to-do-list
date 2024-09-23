@@ -13,6 +13,7 @@ export default function AddTaskContent() {
 
   return (
     <div>
+      <h3 id={styles.title}>Nova tarefa</h3>
       <label htmlFor="taskInput">Título</label>
       <input
         type="text"

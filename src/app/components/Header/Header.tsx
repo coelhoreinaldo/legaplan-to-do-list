@@ -16,12 +16,14 @@ const upperCasedFormattedDate = `${formattedDate
 
 function Header() {
   return (
-    <div id={styles.header}>
-      <Image priority src={logo} alt="logo" />
-      <h4 className={styles.greeting}>Bem vindo de volta, John Doe</h4>
-      <h4 className={styles.date}>{upperCasedFormattedDate}</h4>
+    <>
+      <div id={styles.header}>
+        <Image priority src={logo} alt="logo" />
+        <h4 className={styles.greeting}>Bem vindo de volta, John Doe</h4>
+        <h4 className={styles.date}>{upperCasedFormattedDate}</h4>
+      </div>
       <div className={styles.divider} />
-    </div>
+    </>
   );
 }
 

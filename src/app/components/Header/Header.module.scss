@@ -4,12 +4,6 @@
   flex-direction: column;
   gap: 0.3em;
 
-  .divider {
-    height: 1px;
-    background-color: #d7dde9;
-    margin: 1.3em 0;
-  }
-
   .date {
     color: rgba(0, 0, 0, 0.5);
     font-weight: 400;
@@ -17,5 +11,25 @@
 
   .greeting {
     font-weight: 500;
+  }
+}
+
+.divider {
+  height: 1px;
+  background-color: #d7dde9;
+  margin: 1.3em 0;
+}
+
+@media screen and (min-width: 768px) {
+  #header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .greeting {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 24px;
+    }
   }
 }

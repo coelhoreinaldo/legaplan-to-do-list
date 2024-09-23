@@ -11,8 +11,8 @@ import {
   mockUpdateTask,
   resetTasks,
   tasks,
-} from './mocks/tasks';
-import { customRender, mockNextRouter } from './mocks/render';
+} from '../mocks/tasks';
+import { customRender, mockNextRouter } from '../mocks/render';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),

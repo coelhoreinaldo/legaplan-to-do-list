@@ -1,5 +1,5 @@
-import Header from './Header/Header';
-import Tasks from './Tasks/Tasks';
-import Task from './Task/Task';
+import Header from './Header';
+import Tasks from './Tasks';
+import Task from './Task';
 
 export { Header, Tasks, Task };

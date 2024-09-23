@@ -1,45 +1,31 @@
 'use client';
 // TODO: Estilizar o checkbox
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './Tasks.module.scss';
 import { Task } from '..';
-import { TaskItem } from '@/app/types';
-import useLocalStorage from '@/app/hooks/useLocalStorage';
+import { useTasks } from '@/app/context/TaskContext';
 import NewTask from '../NewTask';
 
 function Tasks() {
-  const [storagedTasks, setStoragedTasks] = useLocalStorage<TaskItem[]>(
-    'tasks',
-    []
-  );
-  const [taskList, setTaskList] = useState<TaskItem[]>(storagedTasks);
+  const { tasks, updateTask, deleteTask } = useTasks();
 
   const handleToggle = (id: number) => {
-    setTaskList((prev) =>
-      prev.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
+    const task = tasks.find((task) => task.id === id);
+    if (task) {
+      updateTask(id, { ...task, completed: !task.completed });
+    }
   };
 
   const handleDelete = (id: number) => {
-    setTaskList((prev) => prev.filter((task) => task.id !== id));
+    deleteTask(id);
   };
-
-  useEffect(() => {
-    setStoragedTasks(taskList);
-  }, [taskList]);
-
-  useEffect(() => {
-    setTaskList(storagedTasks);
-  }, [storagedTasks]);
 
   return (
     <main className={styles.main}>
       <section className={styles.tasksContainer}>
         <h4 className={styles.title}>Suas tarefas de hoje</h4>
         <div className={styles.tasks}>
-          {taskList
+          {tasks
             .filter((task) => !task.completed)
             .map((task) => (
               <Task
@@ -52,7 +38,7 @@ function Tasks() {
         </div>
         <h4 className={styles.title}>Tarefas finalizadas</h4>
         <div className={styles.tasks}>
-          {taskList
+          {tasks
             .filter((task) => task.completed)
             .map((task) => (
               <Task

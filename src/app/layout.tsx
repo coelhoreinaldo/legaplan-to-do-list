@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter_Tight } from 'next/font/google';
 import './globals.scss';
+import { TaskProvider } from './context/TaskContext';
 
 const interTight = Inter_Tight({ subsets: ['latin'], weight: ['400', '500'] });
 
@@ -19,8 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={interTight.className}>
-        {children}
-        {modal}
+        <TaskProvider>
+          {children}
+          {modal}
+        </TaskProvider>
       </body>
     </html>
   );

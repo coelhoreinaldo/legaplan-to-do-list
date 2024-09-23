@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
-import styles from './NewTask.module.scss';
+import styles from '../../../styles/shared.module.scss';
 
 function NewTask() {
   return (
-    <Link href="/new" className={styles.addButton}>
+    <Link href="/create" className={styles.addButton}>
       Adicionar nova tarefa
     </Link>
   );

@@ -5,7 +5,6 @@ import styles from './Tasks.module.scss';
 import { Task } from '..';
 import { TaskItem } from '@/app/types';
 import useLocalStorage from '@/app/hooks/useLocalStorage';
-import Link from 'next/link';
 import NewTask from '../NewTask';
 
 function Tasks() {

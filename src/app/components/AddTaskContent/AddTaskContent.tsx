@@ -1,8 +1,9 @@
 'use client';
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../../styles/shared.module.scss';
 import { useTasks } from '@/app/context/TaskContext';
+import { getNextId } from '@/app/utils/getNextId';
 
 function AddTaskContent() {
   const router = useRouter();
@@ -23,7 +24,7 @@ function AddTaskContent() {
         className={styles.addButton}
         onClick={(e) => {
           e.preventDefault();
-          addTask({ id: tasks.length + 1, text: task, completed: false });
+          addTask({ id: getNextId(tasks), text: task, completed: false });
           router.back();
         }}
       >

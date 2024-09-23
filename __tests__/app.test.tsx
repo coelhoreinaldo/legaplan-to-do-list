@@ -3,19 +3,28 @@ import '@testing-library/jest-dom';
 import { screen, waitFor, fireEvent } from '@testing-library/react';
 import React from 'react';
 import mockRouter from 'next-router-mock';
-import { AddTaskContent } from '@/app/components';
-import { useRouter } from 'next/navigation';
-import { mockAddTask, mockUpdateTask, tasks } from './mocks/tasks';
+import { AddTaskContent, RemoveTaskContent } from '@/app/components';
+import { useParams, useRouter } from 'next/navigation';
+import {
+  mockAddTask,
+  mockDeleteTask,
+  mockUpdateTask,
+  resetTasks,
+  tasks,
+} from './mocks/tasks';
 import { customRender, mockNextRouter } from './mocks/render';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
+  useParams: jest.fn(),
 }));
 
 describe('The app', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     (useRouter as jest.Mock).mockReturnValue(mockNextRouter);
+    (useParams as jest.Mock).mockReturnValue({ id: '1' });
+    resetTasks();
   });
 
   it('should render a list of tasks', async () => {
@@ -98,5 +107,62 @@ describe('The app', () => {
     fireEvent.click(link);
 
     expect(tasks).toHaveLength(3);
+  });
+
+  it('should go back to home page when back button is clicked', async () => {
+    mockRouter.push('/create');
+
+    customRender(<AddTaskContent />, {
+      providerProps: {
+        value: {
+          tasks,
+          addTask: mockAddTask,
+        },
+      },
+    });
+
+    const link = screen.getByText('Cancelar');
+
+    fireEvent.click(link);
+
+    expect(mockNextRouter.back).toHaveBeenCalled();
+  });
+
+  it(`should redirect to "remove/:id" when trash icon is clicked`, async () => {
+    async () => {
+      customRender(<Home />, {
+        providerProps: {
+          value: {
+            tasks,
+          },
+        },
+      });
+
+      const trashIcon = screen.getAllByAltText('Lixeira')[0];
+
+      fireEvent.click(trashIcon);
+
+      expect(mockRouter.asPath).toEqual('/remove/1');
+    };
+  });
+
+  it('should delete a task', async () => {
+    mockRouter.push('/remove/1');
+
+    customRender(<RemoveTaskContent />, {
+      providerProps: {
+        value: {
+          tasks,
+          deleteTask: mockDeleteTask,
+        },
+      },
+    });
+
+    const deleteButton = screen.getByRole('button', { name: 'Deletar' });
+
+    fireEvent.click(deleteButton);
+
+    expect(tasks).toHaveLength(1);
+    expect(tasks[0].id).not.toEqual(1);
   });
 });

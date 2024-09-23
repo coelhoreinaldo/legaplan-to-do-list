@@ -1,49 +1,16 @@
-import { TaskContext } from '@/app/context/TaskContext';
 import Home from '@/app/page';
 import '@testing-library/jest-dom';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
-import React, { ReactElement } from 'react';
-import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
+import { screen, waitFor, fireEvent } from '@testing-library/react';
+import React from 'react';
 import mockRouter from 'next-router-mock';
 import { AddTaskContent } from '@/app/components';
 import { useRouter } from 'next/navigation';
+import { mockAddTask, mockUpdateTask, tasks } from './mocks/tasks';
+import { customRender, mockNextRouter } from './mocks/render';
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
-
-const tasks = [
-  { id: 1, text: 'Task 1', completed: false },
-  { id: 2, text: 'Task 2', completed: true },
-];
-
-const mockUpdateTask = jest.fn((id, updatedTask) => {
-  const taskIndex = tasks.findIndex((task) => task.id === id);
-  if (taskIndex > -1) {
-    tasks[taskIndex] = { ...tasks[taskIndex], ...updatedTask };
-  }
-});
-
-const mockAddTask = jest.fn((task) => {
-  tasks.push(task);
-});
-
-const mockNextRouter = {
-  push: jest.fn(),
-  back: jest.fn(),
-};
-
-const customRender = (
-  ui: ReactElement,
-  { providerProps, ...renderOptions }: { providerProps: any }
-) => {
-  return render(
-    <MemoryRouterProvider>
-      <TaskContext.Provider {...providerProps}>{ui}</TaskContext.Provider>
-    </MemoryRouterProvider>,
-    renderOptions
-  );
-};
 
 describe('The app', () => {
   beforeEach(() => {

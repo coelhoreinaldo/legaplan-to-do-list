@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import styles from '../../../styles/shared.module.scss';
 import { useTasks } from '@/app/context/TaskContext';
 import { getNextId } from '@/app/utils/getNextId';
+import CancelButton from '../CancelButton';
 
 export default function AddTaskContent() {
   const router = useRouter();
@@ -30,6 +31,7 @@ export default function AddTaskContent() {
       >
         Adicionar
       </button>
+      <CancelButton />
     </div>
   );
 }

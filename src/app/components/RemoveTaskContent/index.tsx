@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useTasks } from '@/app/context/TaskContext';
 import styles from '../../../styles/shared.module.scss';
 import { useParams } from 'next/navigation';
+import { CancelButton } from '..';
 
 function RemoveTaskContent() {
   const router = useRouter();
@@ -12,16 +13,19 @@ function RemoveTaskContent() {
   const { deleteTask } = useTasks();
 
   return (
-    <button
-      className={styles.removeButton}
-      onClick={(e) => {
-        e.preventDefault();
-        deleteTask(Number(id));
-        router.back();
-      }}
-    >
-      Remover
-    </button>
+    <>
+      <button
+        className={styles.removeButton}
+        onClick={(e) => {
+          e.preventDefault();
+          deleteTask(Number(id));
+          router.back();
+        }}
+      >
+        Remover
+      </button>
+      <CancelButton />
+    </>
   );
 }
 

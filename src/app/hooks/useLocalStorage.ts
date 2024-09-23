@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T) => void, () => void] {
+export default function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T) => void] {
   const [storedValue, setStoredValue] = useState<T>(initialValue);
   const [isClient, setIsClient] = useState(false);
 
@@ -24,11 +24,5 @@ export default function useLocalStorage<T>(key: string, initialValue: T): [T, (v
     }
   };
 
-  const removeValue = () => {
-    if (isClient) {
-      window.localStorage.removeItem(key);
-    }
-  };
-
-  return [storedValue, setValue, removeValue];
+  return [storedValue, setValue];
 }
